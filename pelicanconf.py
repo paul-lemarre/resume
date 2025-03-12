@@ -4,7 +4,7 @@ SITEURL = ""
 
 PATH = "./content/"
 
-TIMEZONE = "Europe/Rome"
+TIMEZONE = "Europe/Paris"
 
 DEFAULT_LANG = "en"
 
@@ -36,4 +36,10 @@ DEFAULT_PAGINATION = 10
 
 FILENAME_METADATA = "(?P<title>.*)"
 
-THEME = "theme"
+THEME = "../pelican-themes/pelican-bootstrap3"
+JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
+PLUGIN_PATHS = ["../pelican-plugins"]
+PLUGINS = ["i18n_subsites"]
+BOOTSTRAP_THEME = "lumen"
+
+ARTICLE_EXCLUDES = ["pages/p5"]
