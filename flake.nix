@@ -49,7 +49,7 @@
               shellHook = ''
                 ${shellInit}
                 poetry install
-                poetry shell
+                source $(poetry env info --path)/bin/activate
               '';
             };
 
