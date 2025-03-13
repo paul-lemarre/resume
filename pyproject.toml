@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "homepage-pelican"
+version = "0.0.1"
+description = "My homepage with Python"
+authors = ["Paul Lemarre"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+pelican = "^4.11.0"
+markdown = "^3.7"
+mdx-include = "^1.4.2"
+
+[tool.poetry.extras]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
