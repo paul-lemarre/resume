@@ -1,8 +1,7 @@
-# Sources for my homepage using pelican
+# Sources for my online resume
 
-Trying to setup nix to handle pelican.
+## How to install
 
-## Auto-publish to pages
-
-- use `make publish`
-- commit the content to the required repo: https://docs.getpelican.com/en/latest/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
+- `nix develop .#poetry`
+- `npm install`
+- `npm start`
