@@ -18,11 +18,10 @@
           pkgs = import nixpkgs { inherit system; };
           shellBuildInputs = [
             pkgs.poetry
-
-            # Add interactive bash to support `poetry shell`
             pkgs.bashInteractive
             pkgs.jq
             pkgs.nodejs
+            pkgs.playwright-driver
           ];
           shellInit = ''
             source .envrc 2> /dev/null || true
@@ -30,21 +29,15 @@
               pkgs.stdenv.cc.cc
             ]}
             export POETRY_CACHE_DIR="./.cache/pypoetry"
+            export PLAYWRIGHT_NODEJS_PATH="${pkgs.nodejs}/bin/node"
+            export PLAYWRIGHT_BROWSERS_PATH=${pkgs.playwright-driver.browsers}
+            export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
           '';
         in
         {
-          # Default shell with only poetry installed
+          # Default shell poetry
           devShells = {
             default = pkgs.mkShell {
-              name = "default";
-              buildInputs = shellBuildInputs;
-              shellHook = ''
-                ${shellInit}
-              '';
-            };
-
-            # Install and load a poetry shell
-            poetry = pkgs.mkShell {
               buildInputs = shellBuildInputs;
               shellHook = ''
                 ${shellInit}
@@ -52,7 +45,6 @@
                 source $(poetry env info --path)/bin/activate
               '';
             };
-
           };
         }
       );

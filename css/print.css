@@ -1,0 +1,11 @@
+@media print {
+    html, body {
+        font-size: 8pt;
+    }
+    img {
+         max-height : 70pt;
+         width: auto;
+    }
+    nav {display: none;}
+    header {height: 100pt;}
+  }
