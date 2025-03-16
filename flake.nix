@@ -1,5 +1,5 @@
 {
-  description = "Jinko Cookbook Documentation";
+  description = "Dev env for node.js and poetry";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   outputs =
