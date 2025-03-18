@@ -1,9 +1,18 @@
 @media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+        color-adjust: exact !important;                 /* Firefox 48 – 96 */
+        print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    }
+
     html, body {
         font-size: 8pt;
-    }
-    body {
-        margin: 0mm 0mm 0mm 0mm;
     }
     img {
          max-height : 70pt;
@@ -11,4 +20,5 @@
     }
     nav {display: none;}
     header {height: 100pt;}
+
   }
